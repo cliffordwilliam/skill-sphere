@@ -1,0 +1,96 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id             Int      @id @default(autoincrement())
+  name           String?
+  email          String   @unique
+  password       String
+  role           Role     @default(LEARNER)
+  bio            String?
+  profilePicture String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  sessions       Session[] @relation("UserSessions")
+  reviews        Review[]
+  payments       Payment[]
+
+  Session Session[] @relation("ExpertSessions")
+}
+
+model Skill {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  sessions    Session[]
+}
+
+model Session {
+  id         Int      @id @default(autoincrement())
+  userId     Int
+  expertId   Int
+  skillId    Int
+  schedule   DateTime
+  status     SessionStatus @default(PENDING)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  user       User     @relation("UserSessions", fields: [userId], references: [id])
+  expert     User     @relation("ExpertSessions", fields: [expertId], references: [id])
+  skill      Skill    @relation(fields: [skillId], references: [id])
+  reviews    Review[]
+  payments   Payment[]
+}
+
+model Review {
+  id         Int      @id @default(autoincrement())
+  sessionId  Int
+  reviewerId Int
+  rating     Int
+  comment    String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  session    Session  @relation(fields: [sessionId], references: [id])
+  reviewer   User     @relation(fields: [reviewerId], references: [id])
+}
+
+model Payment {
+  id         Int      @id @default(autoincrement())
+  sessionId  Int
+  userId     Int
+  amount     Float
+  status     PaymentStatus @default(COMPLETED)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  session    Session  @relation(fields: [sessionId], references: [id])
+  user       User     @relation(fields: [userId], references: [id])
+}
+
+enum Role {
+  LEARNER
+  EXPERT
+}
+
+enum SessionStatus {
+  PENDING
+  CONFIRMED
+  CANCELED
+}
+
+enum PaymentStatus {
+  COMPLETED
+  FAILED
+}
