@@ -27,10 +27,12 @@ npx create-next-app@latest
 # default import alias
 ```
 
-# [layout ref](https://demo.vercel.store/)
+# layout ref
 
 ```
 refer to this for layout design, use tailwind
+- https://github.com/vercel/next-learn/tree/main/dashboard/final-example
+- https://demo.vercel.store/
 ```
 
 # [code ref](https://nextjs.org/learn/dashboard-app)
@@ -46,6 +48,11 @@ refer to this to see how to use tailwind to make stuff
 
 https://flowbite.com/
 https://readymadeui.com/
+
+login cred
+https://nextjs.org/learn/dashboard-app/adding-authentication
+Email: user@nextmail.com
+Password: 123456
 ```
 
 # [get icons dep](https://lucide.dev/)

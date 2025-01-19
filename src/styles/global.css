@@ -6,4 +6,10 @@
   .btn-primary {
     @apply inline-block px-5 py-2.5 bg-blue-500 hover:bg-blue-600 text-white rounded;
   }
+  .input-field {
+    @apply p-3 w-full text-sm border rounded outline-blue-600;
+  }
+  .input-field-error {
+    @apply bg-red-50 border-red-500 text-red-900 placeholder-red-700 outline-red-500;
+  }
 }

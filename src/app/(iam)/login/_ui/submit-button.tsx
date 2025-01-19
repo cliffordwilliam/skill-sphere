@@ -12,10 +12,11 @@ export default function SubmitButton({ pending }: { pending: boolean }) {
         disabled={pending}
         className={clsx(
           "btn-primary mt-4",
-          pending && "opacity-50 cursor-not-allowed flex items-center"
+          pending &&
+            "hover:bg-blue-400 bg-blue-400 cursor-not-allowed flex items-center justify-center"
         )}
       >
-        {pending && <LoaderCircle className="animate-spin w-4 h-4 mr-3" />}
+        {pending && <LoaderCircle className="animate-spin mr-3" />}
         {pending ? "Loading..." : "Submit"}
       </button>
     </>
