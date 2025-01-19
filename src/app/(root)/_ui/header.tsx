@@ -1,21 +1,21 @@
 import Link from "next/link";
-import LoginLink from "./login-link";
+import LoginButtonLink from "./login-button-link";
 import Logo from "./logo";
 
 export default function Header() {
   return (
     <>
       {/* navbar color */}
-      <header className="shadow-md bg-white">
+      <header className="shadow-md">
         {/* layout */}
-        <div className="container mx-auto flex p-4 bg-white items-center gap-4 w-full">
+        <div className="container mx-auto flex p-4 items-center">
           {/* logo */}
           <Link href="/">
             <Logo />
           </Link>
           {/* button */}
           <span className="ml-auto">
-            <LoginLink />
+            <LoginButtonLink />
           </span>
         </div>
       </header>

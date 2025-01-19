@@ -39,10 +39,13 @@ refer to this for layout design, use tailwind
 refer to this to see how to code
 ```
 
-# [tailwind components](https://readymadeui.com/)
+# tailwind components
 
 ```
 refer to this to see how to use tailwind to make stuff
+
+https://flowbite.com/
+https://readymadeui.com/
 ```
 
 # [get icons dep](https://lucide.dev/)

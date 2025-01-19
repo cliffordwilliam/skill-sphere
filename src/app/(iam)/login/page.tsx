@@ -1,11 +1,11 @@
 import Image from "next/image";
-import LoginForm from "./ui/login-form";
+import LoginFormCard from "./_ui/login-form-card";
 
 export default function Page() {
   return (
     <>
       {/* client login form */}
-      <LoginForm />
+      <LoginFormCard />
       {/* illustration */}
       <Image
         src="/hero-desktop.png"

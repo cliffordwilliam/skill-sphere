@@ -1,6 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import Image from "next/image";
-import LoginLink from "./ui/login-link";
+import LoginButtonLink from "./_ui/login-button-link";
 
 export default async function Page() {
   const users = await prisma.user.findMany();
@@ -24,7 +24,7 @@ export default async function Page() {
             </p>
             {/* login button */}
             <div className="mt-8">
-              <LoginLink />
+              <LoginButtonLink />
             </div>
           </div>
           {/* illustration */}
