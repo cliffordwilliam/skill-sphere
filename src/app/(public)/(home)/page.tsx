@@ -1,4 +1,4 @@
-import LoginButtonLink from "@/app/_features/public/ui/login-button-link";
+import ButtonLink from "@/app/_features/common/buttons/button-link";
 import { prisma } from "@/lib/prisma";
 import heroDesktop from "@public/hero-desktop.png";
 import heroMobile from "@public/hero-mobile.png";
@@ -25,8 +25,13 @@ export default async function Page() {
               tempor ut reprehenderit.
             </p>
             {/* login button */}
-            <div className="mt-8">
-              <LoginButtonLink />
+            <div className="mt-8 flex gap-4">
+              <ButtonLink href="/login" text="Login" />
+              <ButtonLink
+                href="/register"
+                text="Register"
+                variant="secondary"
+              />
             </div>
           </div>
           {/* illustration */}

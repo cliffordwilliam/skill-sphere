@@ -1,5 +1,4 @@
 import Link from "next/link";
-import LoginButtonLink from "./login-button-link";
 import Logo from "./logo";
 
 export default function Header() {
@@ -13,10 +12,6 @@ export default function Header() {
           <Link href="/">
             <Logo />
           </Link>
-          {/* button */}
-          <span className="ml-auto">
-            <LoginButtonLink />
-          </span>
         </div>
       </header>
     </>

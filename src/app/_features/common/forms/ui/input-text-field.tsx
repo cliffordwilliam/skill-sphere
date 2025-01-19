@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { InputTextFieldProps } from "../definitions/input-text-field-interface";
+import { InputTextFieldProps } from "../definitions/input-text-field-props";
 
 export default function InputTextField({
   type,

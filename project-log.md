@@ -41,11 +41,50 @@ refer to this for layout design, use tailwind
 refer to this to see how to code
 ```
 
+# [use this if you want toast](https://react-hot-toast.com/docs/)
+
+```bash
+npm i react-hot-toast
+```
+
+# create toast provider
+
+```javascript
+"use cleint";
+
+import { Toaster } from "react-hot-toast";
+
+export const ToastProvider = () => {
+  // swap this with other providers
+  return <Toaster />;
+};
+```
+
+# add to root layout before child
+
+```javascript
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode,
+}>) {
+  return (
+    <html lang="en" className={geist.className}>
+      <body>
+        <ToastProvider />
+        {children}
+      </body>
+    </html>
+  );
+}
+```
+
 # tailwind components
 
 ```
 refer to this to see how to use tailwind to make stuff
 
+https://tailwindui.com/
 https://flowbite.com/
 https://readymadeui.com/
 
@@ -307,3 +346,5 @@ export const prisma = globalForPrisma.prisma || new PrismaClient();
 
 if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
 ```
+
+# [read the nextjs doc for everything else its really easy](https://nextjs.org/docs/)

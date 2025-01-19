@@ -9,11 +9,11 @@ export default function Logo() {
         {/* image */}
         <Image
           src={evilRabbit}
-          className="rounded-full"
+          className="rounded-full size-8"
           alt="Screenshots of the dashboard project showing desktop version"
         />
         {/* text */}
-        <span className="font-semibold">Skill Sphere</span>
+        <span className="text-2xl">Skill Sphere</span>
       </div>
     </>
   );

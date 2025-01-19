@@ -3,13 +3,20 @@
 import clsx from "clsx";
 import { LoaderCircle } from "lucide-react";
 
-export default function SubmitButton({ pending }: { pending: boolean }) {
+export default function FormSubmitButton({
+  pending,
+  onClick,
+}: {
+  pending: boolean;
+  onClick?: () => void;
+}) {
   return (
     <>
       {/* submit button */}
       <button
         type="submit"
         disabled={pending}
+        onClick={onClick}
         className={clsx(
           "btn-primary mt-4",
           pending &&

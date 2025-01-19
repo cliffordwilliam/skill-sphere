@@ -2,7 +2,6 @@
 
 import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
 import { RegisterFormState } from "../definitions/register-form-state";
 
 export async function register(
@@ -14,7 +13,7 @@ export async function register(
   // get form data
   const email = formData.get("email") as string;
   const password = formData.get("password") as string;
-  // todo: validate zod here then throw
+  // TODO: validate zod here then throw
   if (!email) {
     return {
       errors: {
@@ -38,13 +37,16 @@ export async function register(
       },
     });
   } catch (error) {
-    // todo: find out what to do with this err
+    // TODO: find out what to do with this err
     return {
-      message: "An error occurred while creating your account.",
+      toastError: "An error occurred while creating your account",
     };
   }
   // revalidate
   revalidatePath("/");
-  // kick
-  redirect("/");
+  // TODO: do login logic here
+  // let client kick
+  return {
+    toastSuccess: "Registration successful",
+  };
 }

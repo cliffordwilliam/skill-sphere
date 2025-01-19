@@ -4,6 +4,7 @@ export type RegisterFormState =
         email?: string;
         password?: string;
       };
-      message?: string;
+      toastError?: string;
+      toastSuccess?: string;
     }
   | undefined;

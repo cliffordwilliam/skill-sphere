@@ -8,16 +8,21 @@ import FormFooter from "../../common/forms/ui/form-footer";
 import FormHeader from "../../common/forms/ui/form-header";
 import FormSubmitButton from "../../common/forms/ui/form-submit-button";
 import InputTextField from "../../common/forms/ui/input-text-field";
-import { login } from "../actions/login";
+import { register } from "../actions/register";
 
-export default function LoginFormCard() {
-  const [state, action, pending] = useActionState(login, undefined);
+export default function RegisterFormCard() {
+  const [state, action, pending] = useActionState(register, undefined);
   const router = useRouter();
 
   // toast and kick
   useEffect(() => {
     if (state?.toastError) {
+      // failed post user
       toast.error(state.toastError);
+    } else if (state?.toastSuccess) {
+      // success post user
+      toast.success(state.toastSuccess);
+      // TODO: kick to dashboard
       router.push("/");
     }
   }, [state, router]);
@@ -27,8 +32,8 @@ export default function LoginFormCard() {
       {/* form card - bg color and layout */}
       <form action={action} className="flex flex-col gap-4 max-w-md card">
         <FormHeader
-          title="Login"
-          subheading="Login to your account and explore a world of possibilities. Your journey begins here."
+          title="Register"
+          subheading="Register to your account and explore a world of possibilities. Your journey begins here."
         />
         {/* email field */}
         <InputTextField
@@ -52,12 +57,12 @@ export default function LoginFormCard() {
         />
         <FormSubmitButton pending={pending} />
         <FormFooter
-          text="Do not have an account"
-          linkText="Register here"
-          linkHref="/register"
+          text="Have an account"
+          linkText="Login here"
+          linkHref="/login"
         />
         {/* TODO: use toast or something for this */}
-        {/* {state?.message && <p>{state?.message}</p>} */}
+        {/* {state?.toastError && <p>{state?.toastError}</p>} */}
       </form>
     </>
   );
