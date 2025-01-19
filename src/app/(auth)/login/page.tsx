@@ -1,4 +1,5 @@
 import LoginFormCard from "@/app/_features/login/ui/login-form-card";
+import heroDesktop from "@public/hero-desktop.png";
 import Image from "next/image";
 
 export default function Page() {
@@ -8,9 +9,7 @@ export default function Page() {
       <LoginFormCard />
       {/* illustration */}
       <Image
-        src="/hero-desktop.png"
-        width={1000}
-        height={760}
+        src={heroDesktop}
         className="hidden md:block"
         alt="Screenshot of the dsdsadsa showing desktop version"
       />

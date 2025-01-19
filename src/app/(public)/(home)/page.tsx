@@ -1,5 +1,7 @@
 import LoginButtonLink from "@/app/_features/public/ui/login-button-link";
 import { prisma } from "@/lib/prisma";
+import heroDesktop from "@public/hero-desktop.png";
+import heroMobile from "@public/hero-mobile.png";
 import Image from "next/image";
 
 export default async function Page() {
@@ -30,16 +32,12 @@ export default async function Page() {
           {/* illustration */}
           <div>
             <Image
-              src="/hero-desktop.png"
-              width={1000}
-              height={760}
+              src={heroDesktop}
               alt="Screenshots of the dashboard project showing desktop version"
               className="hidden md:block"
             />
             <Image
-              src="/hero-mobile.png"
-              width={560}
-              height={620}
+              src={heroMobile}
               alt="Screenshot of the dashboard project showing mobile version"
               className="block md:hidden"
             />

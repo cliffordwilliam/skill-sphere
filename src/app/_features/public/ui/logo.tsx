@@ -1,3 +1,4 @@
+import evilRabbit from "@public/evil-rabbit.png";
 import Image from "next/image";
 
 export default function Logo() {
@@ -7,9 +8,7 @@ export default function Logo() {
       <div className="flex flex-row items-center gap-2">
         {/* image */}
         <Image
-          src="/evil-rabbit.png"
-          width={32}
-          height={32}
+          src={evilRabbit}
           className="rounded-full"
           alt="Screenshots of the dashboard project showing desktop version"
         />
