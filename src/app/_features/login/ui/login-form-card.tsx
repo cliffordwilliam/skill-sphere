@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
-import { register } from "../_actions/register";
+import { register } from "../actions/register";
 import EmailField from "./email-field";
 import FormFooter from "./form-footer";
 import FormHeader from "./form-header";

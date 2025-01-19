@@ -1,5 +1,5 @@
+import InputTextField from "@/app/_features/common/forms/ui/input-text-field";
 import { KeyRound } from "lucide-react";
-import InputTextField from "../../../_globals/_forms/_ui/input-text-field";
 
 export default function PasswordField({ error }: { error?: string }) {
   return (

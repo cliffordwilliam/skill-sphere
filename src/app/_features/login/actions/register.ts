@@ -3,7 +3,7 @@
 import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { RegisterFormState } from "../_definitions/register-form-state";
+import { RegisterFormState } from "../definitions/register-form-state";
 
 export async function register(
   previousState: RegisterFormState,

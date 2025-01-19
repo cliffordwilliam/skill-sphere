@@ -1,6 +1,6 @@
+import LoginButtonLink from "@/app/_features/public/ui/login-button-link";
 import { prisma } from "@/lib/prisma";
 import Image from "next/image";
-import LoginButtonLink from "./_ui/login-button-link";
 
 export default async function Page() {
   const users = await prisma.user.findMany();

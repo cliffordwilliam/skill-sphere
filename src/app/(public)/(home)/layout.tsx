@@ -1,4 +1,5 @@
-import Header from "./_ui/header";
+import Header from "@/app/_features/public/ui/header";
+import "@/styles/global.css";
 
 export default function Layout({
   children,

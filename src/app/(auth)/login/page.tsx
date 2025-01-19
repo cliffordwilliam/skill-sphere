@@ -1,5 +1,5 @@
+import LoginFormCard from "@/app/_features/login/ui/login-form-card";
 import Image from "next/image";
-import LoginFormCard from "./_ui/login-form-card";
 
 export default function Page() {
   return (

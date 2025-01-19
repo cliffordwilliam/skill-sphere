@@ -1,5 +1,5 @@
+import InputTextField from "@/app/_features/common/forms/ui/input-text-field";
 import { Mail } from "lucide-react";
-import InputTextField from "../../../_globals/_forms/_ui/input-text-field";
 
 export default function EmailField({ error }: { error?: string }) {
   return (
